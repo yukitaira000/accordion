@@ -1,0 +1,259 @@
+@charset "UTF-8";
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+
+.container{
+  max-width: 2200px;
+  width: 100%;
+  background-color: #d4d4d4;
+}
+
+.inner {
+  max-width: 1400px;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.title-wrapper {
+  width: 350px;
+  border-left: 1px solid #a3a3a3;
+  border-right: 1px solid #a3a3a3;
+}
+
+.title-inner {
+  max-width: 265px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.site-title a {
+  display: inline-block;
+  padding: 30px 60px;
+}
+
+.sub-title {
+  max-width: 260px;
+  width: 100%;
+  border-bottom: 1px solid #a3a3a3;
+  padding: 10px 0;
+}
+
+.title-inner nav ul:first-child {
+  border-top: 1px solid #a3a3a3;
+}
+
+.sub-title li {
+  font-size: 0.75rem;
+  padding: 5px 0;
+}
+
+.sub-title li a:hover {
+ color: #229ab2;
+}
+
+.sub-title li a::before {
+  content:"→";
+  color: #229ab2;
+  margin-right: 5px;
+}
+
+.menu-wrapper {
+  max-width: 1010px;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-inner {
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-right: 1px solid #a3a3a3;
+}
+
+.accordion ul {
+  display: none;
+}
+
+.accordion ul.active{
+  display: block;
+}
+
+.accordion > li {
+  max-width: 430px;
+  width: 100%;
+  border-bottom: 1px solid #a3a3a3;
+}
+
+.accordion > li:hover {
+  opacity: 0.8;
+  background-color: #cacaca;
+}
+
+.accordion > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.87rem;
+  padding: 18px 0;
+  position: relative;
+}
+
+.accordion > li > a:hover {
+  color: #229ab2;
+}
+
+/* menu-title前につく矢印の設定 */
+.icon {
+  content: "";
+  position: relative;
+  padding: 3px 10px;
+  background-color: #229ab2;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7px;
+  height: 1px;
+  background-color: #fff;
+  transform: translate(-60%, -50%);
+}
+
+.icon:hover::before, .icon:hover::after {
+  animation: arrow .3s;
+}
+
+@keyframes arrow {
+  30% {
+    left: 110%;
+    opacity: 0;
+  }
+  60% {
+    left: 0;
+    opacity: 0;
+  }
+  100% {
+    left: 45%;
+  }
+}
+
+/* 矢印についてはここまで */
+
+.menu-title::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 1px;
+  height: 20px;
+  background-color: #a3a3a3;
+  top: 35%;
+  right: 30px;
+}
+
+.accordion li ul {
+  padding: 10px 0;
+  border-top: 1px solid #a3a3a3;
+}
+
+.accordion li ul li {
+  padding: 5px 0;
+}
+
+.accordion li ul li a {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.accordion li ul li a:hover{
+  color: #229ab2;
+}
+
+.accordion li ul li a::before {
+  content:"→";
+  color: #229ab2;
+  margin-right: 5px;
+}
+
+
+/* 開閉ボタン */
+.btn {
+  position: relative;
+  display: block;
+  padding: 15px;
+}
+
+.first-btn-item, .second-btn-item {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background-color: #229ab2;
+  top: 50%;
+  right: 10px;
+}
+
+.second-btn-item {
+  transform: rotate(90deg);
+}
+
+.btn.active span {
+  background-color: #000;
+}
+
+.btn.active .first-btn-item {
+  transform: rotate(45deg);
+}
+
+.btn.active .second-btn-item {
+  transform: rotate(-45deg);
+}
