@@ -72,14 +72,6 @@ h1 {
   border-top: 1px solid #a3a3a3;
 }
 
-.sub-title li {
-  font-size: 0.75rem;
-  padding: 5px 0;
-}
-
-.sub-title li a:hover {
- color: #229ab2;
-}
 
 .sub-title li a::before {
   content:"→";
@@ -138,7 +130,6 @@ h1 {
 
 /* menu-title前につく矢印の設定 */
 .icon {
-  content: "";
   position: relative;
   padding: 3px 10px;
   background-color: #229ab2;
@@ -164,8 +155,7 @@ h1 {
   top: 50%;
   left: 50%;
   width: 7px;
-  height: 1px;
-  background-color: #fff;
+  border-top: 1px solid #fff;
   transform: translate(-60%, -50%);
 }
 
@@ -174,17 +164,25 @@ h1 {
 }
 
 @keyframes arrow {
-  30% {
+  25% {
     left: 110%;
     opacity: 0;
   }
-  60% {
+  50% {
     left: 0;
     opacity: 0;
   }
-  100% {
+  75% {
     left: 45%;
   }
+}
+.sub-title li {
+  font-size: 0.75rem;
+  padding: 5px 0;
+}
+
+.sub-title li a:hover {
+ color: #229ab2;
 }
 
 /* 矢印についてはここまで */
